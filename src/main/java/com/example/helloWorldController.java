@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 public class helloWorldController {
 
     private static final Map<String, Object> HELLO_WORLD =
-            Collections.singletonMap("message", "Hello World!");
+            Collections.singletonMap("message", "Hello world!");
 
 
     @Get
