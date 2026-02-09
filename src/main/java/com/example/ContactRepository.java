@@ -9,4 +9,6 @@ import io.micronaut.context.annotation.Bean;
 @Bean
 public interface ContactRepository {
     void delete(long id);
+
+    void addContact(long id, String name, String jbt, String company);
 }
