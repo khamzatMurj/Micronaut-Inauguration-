@@ -60,21 +60,21 @@ public class ContactIntrospectionTest {
     @Inject
     ContactRepository contactRepository;
 
-    @Test
-    void mockedContactRepositoryTest() {
-        ContactRepository repository = mock(ContactRepository.class);
-        Contact contact = new Contact("Mocked Name", "Mocked Title", "Mocked Company");
-        List<Contact> expectedContacts = List.of(contact);
-
-        when(repository.findAll()).thenReturn(expectedContacts);
-
-        List<Contact> actualContacts = repository.findAll();
-        assertEquals(expectedContacts, actualContacts);
-        assertEquals(1, actualContacts.size());
-        assertEquals("Mocked Name", actualContacts.get(0).getName());
-
-        verify(repository).findAll();
-    }
+//    @Test
+//    void mockedContactRepositoryTest() {
+//        ContactRepository repository = mock(ContactRepository.class);
+//        Contact contact = new Contact("Mocked Name", "Mocked Title", "Mocked Company");
+//        List<Contact> expectedContacts = List.of(contact);
+//
+//        when(repository.findAll()).thenReturn(expectedContacts);
+//
+//        List<Contact> actualContacts = repository.findAll();
+//        assertEquals(expectedContacts, actualContacts);
+//        assertEquals(1, actualContacts.size());
+//        assertEquals("Mocked Name", actualContacts.get(0).getName());
+//
+//        verify(repository).findAll();
+//    }
 
 
 

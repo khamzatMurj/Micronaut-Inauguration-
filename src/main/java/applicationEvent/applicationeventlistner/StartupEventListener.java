@@ -1,4 +1,4 @@
-package applicationEventlistner;
+package applicationEvent.applicationeventlistner;
 
 
 import io.micronaut.context.event.StartupEvent;
