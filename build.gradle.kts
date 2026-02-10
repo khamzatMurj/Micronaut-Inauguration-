@@ -21,8 +21,10 @@ dependencies {
     testImplementation("io.micronaut:micronaut-context")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation("org.mockito:mockito-junit-jupiter")
-    implementation("io.micronaut.build.plugin.sourcegen:micronaut-build-plugin-sourcegen-annotations")
-    annotationProcessor("io.micronaut.build.plugin.sourcegen:micronaut-build-plugin-sourcegen-generator")
+    //micronaut core processor and sourcegen
+    annotationProcessor("io.micronaut.sourcegen:micronaut-sourcegen-generator-java")
+    //sourcegen Annotation
+    implementation("io.micronaut.sourcegen:micronaut-sourcegen-annotations")
 }
 
 
