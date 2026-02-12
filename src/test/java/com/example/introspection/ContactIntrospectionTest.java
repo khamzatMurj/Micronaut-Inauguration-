@@ -53,6 +53,7 @@ public class ContactIntrospectionTest {
         assertEquals("Test", introspection.getRequiredProperty("name", String.class).get(contact));
         assertEquals("Test Title", introspection.getRequiredProperty("jbt ", String.class).get(contact));
         assertEquals("Test Company", introspection.getRequiredProperty("company", String.class).get(contact));
+
     }
 
     // create new testing method mocking the Contact repository test
