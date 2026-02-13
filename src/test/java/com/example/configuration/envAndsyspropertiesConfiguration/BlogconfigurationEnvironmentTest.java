@@ -38,12 +38,31 @@ public class BlogconfigurationEnvironmentTest {
         try(ApplicationContext applicationContext = ApplicationContext.run()) {
             Blogconfiguration blogconfigurations = applicationContext.getBeansOfType(Blogconfiguration.class).stream().findFirst().get();
             assertEquals(blogPostPerPage_integer, blogconfigurations.getPostsPerPage());
-            assertEquals(0, blogconfigurations);
+            //assertEquals(0, blogconfigurations);
 
         }
         assertNotNull(blog_post_per_page);
 
+    }
 
+    /*
+    * 1: define the system property with it value
+    *
+    *
+    * */
+    @Test
+    void testProperties(){
+        String property_value = System.setProperty("blog.posts.per.page", "10");
+        System.out.println(property_value + "----");
+        //get the property
+        String property = System.getProperty("blog.posts.per.page");
+        System.out.println(property);
+
+        try (ApplicationContext applicationContext = ApplicationContext.run()) {
+            Blogconfiguration bean = applicationContext.getBean(Blogconfiguration.class);
+            assertEquals(10, bean.getPostsPerPage());
+
+        }
 
 
 

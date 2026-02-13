@@ -1,0 +1,1 @@
+export MICRONAUT_ENVIRONMENTS = production
