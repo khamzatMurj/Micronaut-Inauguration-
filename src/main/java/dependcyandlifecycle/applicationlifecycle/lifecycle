@@ -1,0 +1,10 @@
+two annotation lifecycle management
+1. @PostConstruct                  : the method annotated will be called once the constructor is fully called and injected
+2. @PreDestroy                     : when the context is closed
+
+
+explication for each annotation
+1. for the **controllers** in micronaut are lazy by default so you need to make a call to the controllers
+2. in order to see the log for the 2nd annotation you have to do this following steps :
+    - Enable the stop endpoint in the application.properties so once post it send the route and shut down the application
+    - have the implementation dependency "micronaut-management" in the gradle script to stop the endpoint

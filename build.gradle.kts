@@ -21,6 +21,8 @@ dependencies {
     testImplementation("io.micronaut:micronaut-context")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation("org.mockito:mockito-junit-jupiter")
+    //import the junit annotation paramterized testing
+    testImplementation("org.junit.jupiter:junit-jupiter-params")
     //micronaut core processor and sourcegen
     annotationProcessor("io.micronaut.sourcegen:micronaut-sourcegen-generator-java")
     //sourcegen Annotation
