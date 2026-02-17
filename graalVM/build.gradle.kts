@@ -2,6 +2,8 @@ plugins {
     id("io.micronaut.application") version "4.6.1"
     id("com.gradleup.shadow") version "8.3.9"
     id("io.micronaut.aot") version "4.6.1"
+    //id("org.graalvm.buildtools.native") version "0.11.1"
+
 }
 
 version = "0.1"
@@ -18,15 +20,7 @@ dependencies {
     compileOnly("io.micronaut:micronaut-http-client")
     runtimeOnly("ch.qos.logback:logback-classic")
     testImplementation("io.micronaut:micronaut-http-client")
-    testImplementation("io.micronaut:micronaut-context")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-    testImplementation("org.mockito:mockito-junit-jupiter")
-    //import the junit annotation paramterized testing
-    testImplementation("org.junit.jupiter:junit-jupiter-params")
-    //micronaut core processor and sourcegen
-    annotationProcessor("io.micronaut.sourcegen:micronaut-sourcegen-generator-java")
-    //sourcegen Annotation
-    implementation("io.micronaut.sourcegen:micronaut-sourcegen-annotations")
 }
 
 
@@ -34,12 +28,17 @@ application {
     mainClass = "com.example.Application"
 }
 java {
-//    sourceCompatibility = JavaVersion.toVersion("17")
-//    targetCompatibility = JavaVersion.toVersion("17")
+//    sourceCompatibility = JavaVersion.toVersion("21")
+//    targetCompatibility = JavaVersion.toVersion("21")
 }
 
 
 graalvmNative.toolchainDetection = false
+
+//graalvmNative {
+//    agent {
+//    }
+//}
 
 micronaut {
     runtime("netty")
@@ -62,5 +61,9 @@ micronaut {
     }
 }
 
+
+tasks.named<io.micronaut.gradle.docker.NativeImageDockerfile>("dockerfileNative") {
+    jdkVersion = "21"
+}
 
 
