@@ -1,4 +1,4 @@
-package reflectionconfiguration;
+package com.example.reflectionconfiguration;
 
 import jakarta.inject.Singleton;
 import org.slf4j.Logger;
@@ -15,7 +15,7 @@ public class StringTransformer {
     String transform(String input, String className, String methodName){
         try {
             Class<?> clazz = Class.forName(className);
-            Method method = clazz.getDeclaredMethod(methodName);
+            Method method = clazz.getDeclaredMethod(methodName, String.class);
             return method.invoke(null, input).toString();
         } catch (ClassNotFoundException e) {
             LOG.error("Class Not found : {}", className);

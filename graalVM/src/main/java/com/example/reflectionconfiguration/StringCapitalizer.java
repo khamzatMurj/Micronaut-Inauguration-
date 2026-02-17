@@ -1,4 +1,4 @@
-package reflectionconfiguration;
+package com.example.reflectionconfiguration;
 
 public class StringCapitalizer {
     static String capitalize(String input){

@@ -1,4 +1,4 @@
-package reflectionconfiguration;
+package com.example.reflectionconfiguration;
 
 import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.Controller;
@@ -20,7 +20,7 @@ public class StringTransformerController {
     @Produces(MediaType.TEXT_PLAIN)
     @Get("/capitalize{?a}")
     String capitalize(@Nullable @QueryValue String a){
-        String className = "java.reflectionconfiguration.StringCapitalizer";
+        String className = "com.example.reflectionconfiguration.StringCapitalizer";
         String methodName = "capitalize";
         return transformer.transform(a, className, methodName);
     }
@@ -28,7 +28,7 @@ public class StringTransformerController {
     @Produces(MediaType.TEXT_PLAIN)
     @Get("/reverse")
     String reverse(@Nullable @QueryValue String a){
-        var className = (String) "java.reflectionconfiguration.StringReverser";
+        var className = (String) "com.example.reflectionconfiguration.StringReverser";
         var methodName = (String) "reverse";
         return transformer.transform(a, className, methodName);
     }

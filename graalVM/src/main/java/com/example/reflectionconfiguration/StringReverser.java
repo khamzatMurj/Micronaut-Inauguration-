@@ -1,4 +1,4 @@
-package reflectionconfiguration;
+package com.example.reflectionconfiguration;
 
 import java.util.ArrayList;
 import java.util.List;
